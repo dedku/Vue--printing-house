@@ -1,7 +1,14 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
-  purge: [],
+  purge: [
+  ],
   enabled: process.env.NODE_ENV === "production",
+  content: [
+    "./public/**/*.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "./src/*.{vue,js,ts,jsx,tsx}",
+    "./node_modules/flowbite/dist/flowbite.js"
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -269,6 +276,7 @@ module.exports = {
       },
       height: {
         '1/2': '50%',
+        '128': '36rem',
       },
       scale: {
         '30': '.3',
@@ -284,5 +292,7 @@ module.exports = {
     opacity: ['responsive', 'hover', 'focus', 'group-hover'],
     backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 };

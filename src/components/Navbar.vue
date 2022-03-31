@@ -4,68 +4,85 @@
       class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
     >
       <div class="relative flex items-center justify-between">
-        <a
-          href="/"
+        <router-link
+          to="/"
           aria-label="Company"
           title="Company"
           class="inline-flex items-center"
         >
-          <span
-            class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase"
-            >logo</span
-          >
-        </a>
+            <img src="../assets/poligrafia-logo-main.svg" alt="poligrafia-łódź-logo" class="h-20">
+
+        </router-link>
         <ul class="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <a
-              href="/"
+            <router-link
+              to="/"
               aria-label="Our product"
               title="Our product"
               class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
-              >Strona główna</a
+              >Strona główna</router-link
             >
           </li>
           <li>
-            <a
-              href="/"
-              aria-label="Our product"
-              title="Our product"
-              class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
-              >Dlaczego my</a
-            >
-          </li>
-          <li>
-            <a
-              href="/"
+            <router-link
+              to="/"
               aria-label="Product pricing"
               title="Product pricing"
               class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
-              >Wydawnictwo</a
+              >Oferta</router-link
             >
           </li>
           <li>
-            <a
-              href="/"
+            <router-link
+              to="/"
+              aria-label="Our product"
+              title="Our product"
+              class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
+              >Dlaczego z nami</router-link
+            >
+          </li>
+          <li>
+            <router-link
+              to="/"
+              aria-label="Product pricing"
+              title="Product pricing"
+              class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
+              >Wydawnictwo</router-link
+            >
+          </li>
+          <li>
+            <router-link
+              to="/"
               aria-label="About us"
               title="About us"
               class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
-              >Kontakt</a
+              >Kontakt</router-link
             >
           </li>
         </ul>
         <ul class="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <a
-              href="/"
+            <button class="inline-flex items-center justify-center h-12 gap-2 text-gray-800 ">
+              <box-icon animation="tada" color="green" type='solid' name='phone-call'></box-icon>
+              +48 504 128 606
+            </button>
+          </li>
+          <li>
+            <router-link
+              to="/"
               class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-200 hover:shadow-xl focus:shadow-outline focus:outline-none"
               aria-label="Sign up"
               title="Sign up"
             >
               Zaloguj się
-            </a>
+            </router-link>
           </li>
         </ul>
         <div class="lg:hidden">
+            <button class="inline-flex items-center justify-center h-12 gap-2 text-gray-800 ">
+              <box-icon animation="tada" color="green" type='solid' name='phone-call'></box-icon>
+              +48 123 456 789
+            </button>
           <button
             aria-label="Open Menu"
             title="Open Menu"
@@ -91,8 +108,8 @@
             <div class="p-5 bg-white border rounded shadow-sm">
               <div class="flex items-center justify-between mb-4">
                 <div>
-                  <a
-                    href="/"
+                  <router-link
+                    to="/"
                     aria-label="Company"
                     title="Company"
                     class="inline-flex items-center"
@@ -101,7 +118,7 @@
                       class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase"
                       >Logo</span
                     >
-                  </a>
+                  </router-link>
                 </div>
                 <div>
                   <button
@@ -122,12 +139,12 @@
               <nav>
                 <ul class="space-y-4">
                   <li>
-                    <a
-                      href="/"
+                    <router-link
+                      to="/"
                       aria-label="Our product"
                       title="Our product"
                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-accent-400"
-                      >Strona główna</a
+                      >Strona główna</router-link
                     >
                   </li>
                   <li>
@@ -140,32 +157,32 @@
                     >
                   </li>
                   <li>
-                    <a
-                      href="/"
+                    <router-link
+                      to="/"
                       aria-label="Product pricing"
                       title="Product pricing"
                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-accent-400"
-                      >Wydawnictwo</a
+                      >Wydawnictwo</router-link
                     >
                   </li>
                   <li>
-                    <a
-                      href="/"
+                    <router-link
+                      to="/"
                       aria-label="About us"
                       title="About us"
                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-accent-400"
-                      >Kontakt</a
+                      >Kontakt</router-link
                     >
                   </li>
                   <li>
-                    <a
-                      href="/"
+                    <router-link
+                      to="/"
                       class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                       aria-label="Sign up"
                       title="Sign up"
                     >
                       Zaloguj się
-                    </a>
+                    </router-link>
                   </li>
                 </ul>
               </nav>

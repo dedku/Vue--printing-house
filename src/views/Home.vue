@@ -3,10 +3,11 @@
     <Header />
     <Stats />
     <Steps />
+    <Products />
     <About />
     <Books />
     <Assets />
-    <Contact />
+    <Blog />
     <Footer />
 </template>
 
@@ -18,9 +19,10 @@ import Stats from '../components/Stats.vue'
 import About from '../components/About.vue'
 import Books from '../components/Books.vue'
 import Assets from '../components/Assets.vue'
-import Contact from '../components/Contact.vue'
 import Footer from '../components/Footer.vue'
 import Steps from '../components/Steps.vue'
+import Products from '../components/Products.vue'
+import Blog from '../components/Blog.vue'
 
 export default {
   name: 'Home',
@@ -31,8 +33,9 @@ export default {
     About,
     Books,
     Assets,
-    Contact,
     Footer,
+    Products,
+    Blog,
     Steps
 }
 }
