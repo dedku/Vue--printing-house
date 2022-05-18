@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
     path: '/uslugi',
@@ -29,7 +29,16 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior(to) {
+    if (to.hash) {
+        return {
+          el: to.hash,
+          behavior: 'smooth',
+          top:35,
+        }
+      }
+  }
 })
 
 export default router

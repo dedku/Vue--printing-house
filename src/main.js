@@ -7,4 +7,5 @@ import './assets/tailwind.css'
 import 'flowbite'
 import 'boxicons'
 
+
 createApp(App).use(store).use(router).mount('#app')

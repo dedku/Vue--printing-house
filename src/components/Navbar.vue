@@ -6,8 +6,8 @@
       <div class="relative flex items-center justify-between">
         <router-link
           to="/"
-          aria-label="Company"
-          title="Company"
+          aria-label="Home przycisk"
+          title="Home"
           class="inline-flex items-center"
         >
             <img src="../assets/poligrafia-logo-main.svg" alt="poligrafia-łódź-logo" class="h-20">
@@ -17,75 +17,78 @@
           <li>
             <router-link
               to="/"
-              aria-label="Our product"
-              title="Our product"
+              aria-label="Strona główna przycisk nawigujący"
+              title="Strona główna"
               class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
               >Strona główna</router-link
             >
           </li>
           <li>
             <router-link
-              to="/"
-              aria-label="Product pricing"
-              title="Product pricing"
+              to="/#produkty"
+              aria-label="Produkty przycisk nawigujący"
+              title="Produkty"
               class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
               >Oferta</router-link
             >
           </li>
           <li>
             <router-link
-              to="/"
-              aria-label="Our product"
-              title="Our product"
+              to="/#znami"
+              aria-label="Dlaczego z nami przycisk nawigujący"
+              title="Dlaczego z nami"
               class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
               >Dlaczego z nami</router-link
             >
           </li>
           <li>
             <router-link
-              to="/"
-              aria-label="Product pricing"
-              title="Product pricing"
+              to="/#wydawnictwo"
+              aria-label="Wydawnictwo przycisk nawigujący"
+              title="Wydawnictwo"
               class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
               >Wydawnictwo</router-link
             >
           </li>
           <li>
             <router-link
-              to="/"
-              aria-label="About us"
-              title="About us"
+              to="/#blog"
+              aria-label="Blog przycisk nawigujący"
+              title="Blog"
               class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
-              >Kontakt</router-link
+              >Blog</router-link
             >
           </li>
         </ul>
         <ul class="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <button class="inline-flex items-center justify-center h-12 gap-2 text-gray-800 ">
+            <a class="inline-flex items-center justify-center h-12 gap-2 text-gray-800 " href="tel:+48504128606">
               <box-icon animation="tada" color="green" type='solid' name='phone-call'></box-icon>
               +48 504 128 606
-            </button>
+            </a>
           </li>
           <li>
             <router-link
               to="/"
               class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-200 hover:shadow-xl focus:shadow-outline focus:outline-none"
-              aria-label="Sign up"
-              title="Sign up"
+              aria-label="Zaloguj się przycisk"
+              title="Zaloguj się"
             >
               Zaloguj się
             </router-link>
           </li>
         </ul>
         <div class="lg:hidden">
-            <button class="inline-flex items-center justify-center h-12 gap-2 text-gray-800 ">
+            <a
+            aria-label="Zadzwoń do nas przycisk"
+            title="Zadzwoń do nas"
+            class="inline-flex items-center justify-center h-12 gap-2 text-gray-800 " href="tel:+48504128606">
               <box-icon animation="tada" color="green" type='solid' name='phone-call'></box-icon>
-              +48 123 456 789
-            </button>
+              +48 504 128 606
+            </a>
           <button
-            aria-label="Open Menu"
-            title="Open Menu"
+            aria-label="Otwórz menu przycisk"
+            title="Otwórz menu"
             class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
             @click="isMenuOpen = true"
           >
@@ -110,8 +113,8 @@
                 <div>
                   <router-link
                     to="/"
-                    aria-label="Company"
-                    title="Company"
+                    aria-label="Home przycisk"
+                    title="Home"
                     class="inline-flex items-center"
                   >
                     <span
@@ -122,8 +125,8 @@
                 </div>
                 <div>
                   <button
-                    aria-label="Close Menu"
-                    title="Close Menu"
+                    aria-label="Zamknij menu ikkona"
+                    title="Zamknij menu"
                     class="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                     @click="isMenuOpen = false"
                   >
@@ -141,45 +144,54 @@
                   <li>
                     <router-link
                       to="/"
-                      aria-label="Our product"
-                      title="Our product"
+                      aria-label="Strona główna przycisk nawigujący"
+                      title="Strona główna"
                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-accent-400"
                       >Strona główna</router-link
                     >
                   </li>
                   <li>
-                    <a
-                      href="/"
-                      aria-label="Our product"
-                      title="Our product"
+                    <router-link
+                      href="/#produkty"
+                      aria-label="Produkty przycisk nawigujący"
+                      title="Produkty"
                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-accent-400"
-                      >Dlaczego my</a
+                      >Oferta</router-link
                     >
                   </li>
                   <li>
                     <router-link
-                      to="/"
-                      aria-label="Product pricing"
-                      title="Product pricing"
+                      to="/#znami"
+                      aria-label="Dlaczego z nami przycisk nawigujący"
+                      title="Dlaczego z nami"
+                      class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-accent-400"
+                      >Dlaczego z nami</router-link
+                    >
+                  </li>
+                  <li>
+                    <router-link
+                      to="/#wydawnictwo"
+                      aria-label="Wydawnictwo przycisk nawigujący"
+                      title="Wydawnictwo"
                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-accent-400"
                       >Wydawnictwo</router-link
                     >
                   </li>
                   <li>
-                    <router-link
-                      to="/"
-                      aria-label="About us"
-                      title="About us"
-                      class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-accent-400"
-                      >Kontakt</router-link
+                  <router-link
+                      to="/#blog"
+                      aria-label="Blog przycisk nawigujący"
+                      title="Blog"
+                      class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400"
+                      >Blog</router-link
                     >
                   </li>
                   <li>
                     <router-link
                       to="/"
                       class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                      aria-label="Sign up"
-                      title="Sign up"
+                      aria-label="Zaloguj się przycisk"
+                      title="Zaloguj się"
                     >
                       Zaloguj się
                     </router-link>
@@ -204,12 +216,10 @@ data () {
         }
     }
 },
-
 // a beforeMount call to add a listener to the window
 beforeMount () {
     window.addEventListener('scroll', this.handleScroll);
 },
-
 methods: {
     // the function to call when the user scrolls, added as a method
     handleScroll(){
@@ -221,7 +231,7 @@ methods: {
             // user is at top of page
             if(!this.view.atTopOfPage) this.view.atTopOfPage = true
         }
-    }
-}
+    },
+  }
 };
 </script>

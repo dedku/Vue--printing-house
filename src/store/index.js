@@ -1,12 +1,20 @@
 import { createStore } from 'vuex'
+import dataItems from './modules/dataItems'
 
-export default createStore({
+const store = createStore({
+  modules: {
+    dataItems
+  },
   state: {
+    // data
   },
   mutations: {
+
   },
   actions: {
+
   },
-  modules: {
-  }
+
 })
+
+export default store
