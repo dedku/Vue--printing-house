@@ -3,7 +3,7 @@
         <div class="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
       <h2 class="max-w-lg mb-5 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none md:mb-6 group">
         <span class="inline-block mb-1 text-gray-900 sm:mb-4">
-          Wydawnictwo<br class="hidden md:block" />
+          Wydawnictwo historyczno-kulturowe<br class="hidden md:block" />
         </span>
         <div class="h-1 ml-auto duration-300 origin-left transform bg-blue-accent-400 scale-x-30 group-hover:scale-x-100"></div>
       </h2>

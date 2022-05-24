@@ -1,13 +1,10 @@
 <template>
-  <img
-    v-if="loading"
-    src="https://i.imgur.com/JfPpwOA.gif"
-  >
+  <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif">
   <div v-else>
-    <Header :section="sections[0]" :products="products"/>
-    <Stats :stats="stats"/>
-    <Customers :customers="customers[0]"/>
-    <Products :products="products"/>
+    <Header :section="sections[0]" :products="products" />
+    <Stats :stats="stats" />
+    <Customers :customers="customers[0]" />
+    <Products :products="products" />
     <About />
     <Books />
     <Assets />
@@ -18,26 +15,25 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import { defineAsyncComponent }from 'vue'
+import { defineAsyncComponent } from 'vue'
 
 import Header from '@/components/Header.vue'
 const Stats = defineAsyncComponent(() =>
-import('../components/Stats.vue')
+  import('../components/Stats.vue')
 )
 const About = defineAsyncComponent(() =>
-import('../components/About.vue'))
+  import('../components/About.vue'))
 const Books = defineAsyncComponent(() =>
-import('../components/Books.vue'))
+  import('../components/Books.vue'))
 const Assets = defineAsyncComponent(() =>
-import('../components/Assets.vue'))
+  import('../components/Assets.vue'))
 const Footer = defineAsyncComponent(() =>
-import('../components/Footer.vue'))
+  import('../components/Footer.vue'))
 const Customers = defineAsyncComponent(() =>
-import('../components/Customers.vue'))
-const Products = defineAsyncComponent(() =>
-import('../components/Products.vue'))
+  import('../components/Customers.vue'))
 const Blog = defineAsyncComponent(() =>
-import('../components/Blog.vue'))
+  import('../components/Blog.vue'))
+import Products from '../components/Products.vue';
 
 export default {
   name: 'Home',
@@ -71,7 +67,7 @@ export default {
       fetchData: 'dataItems/fetchData',
     })
   },
-  created () {
+  created() {
     this.loading = true
     this.fetchData().then(() => this.loading = false)
   },
@@ -79,5 +75,4 @@ export default {
 </script>
 
 <style>
-
 </style>

@@ -1,20 +1,18 @@
 <template>
-  <Carousel class="overflow-auto justify-center items-center h-96 rounded-lg sm:h-80 xl:h-96 2xl:h-128"
-    :autoplay="hover == false ? 4500 : 30000" :wrap-around="true" @click="stopAuto">
-    <Slide v-for="product in headerProducts" :key="product.id">
-      <img class="carousel__item h-96" :src="getImgUrl(product.url)">
+  <Carousel class="overflow-auto justify-center items-center" :autoplay="4500" :wrap-around="true" :items-to-show="2"
+    snapAlign="start">
+    <Slide v-for="image in section.zaufaliNamImg" :key="image.id">
+      <img class="carousel__item" :src="getImgUrl(image.url)" :alt="image.alt">
     </Slide>
 
     <template #addons>
-      <Navigation />
-      <Pagination class="xl:pt-10" />
     </template>
   </Carousel>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
-import { Carousel, Pagination, Slide, Navigation } from 'vue3-carousel';
+import { Carousel, Slide, } from 'vue3-carousel';
 import { mapGetters } from 'vuex'
 import 'vue3-carousel/dist/carousel.css';
 
@@ -23,8 +21,13 @@ export default defineComponent({
   components: {
     Carousel,
     Slide,
-    Pagination,
-    Navigation,
+
+  },
+  props: {
+    section: {
+      type: Object,
+      default: () => { },
+    }
   },
   data() {
     return {
@@ -37,9 +40,6 @@ export default defineComponent({
       const images = require.context('../assets/', false, /\.png$/)
       return images('./' + url + ".png")
     },
-    stopAuto: function () {
-      this.hover = true;
-    }
   },
   computed: {
     ...mapGetters('dataItems', {

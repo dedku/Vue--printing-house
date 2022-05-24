@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Uslugi from '../views/Uslugi.vue'
 import Wydawnictwo from '../views/Wydawnictwo.vue'
-import Blog from '../views/Blog.vue'
 
 const routes = [
   {
@@ -20,11 +19,6 @@ const routes = [
     name: 'Wydawnictwo',
     component: Wydawnictwo
   },
-  {
-    path: '/blog',
-    name: 'Blog',
-    component: Blog
-  }
 ]
 
 const router = createRouter({
@@ -35,7 +29,7 @@ const router = createRouter({
         return {
           el: to.hash,
           behavior: 'smooth',
-          top:35,
+          top:65,
         }
       }
   }

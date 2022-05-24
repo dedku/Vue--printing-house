@@ -34,7 +34,7 @@ export default {
       return state.products.filter(product => product.header)
     },
     webProducts (state) {
-      return state.products.filter(product => product.produkty).slice(0,4)
+      return state.products.filter(product => product.produkty)
     }
   }
 }
