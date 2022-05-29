@@ -10,7 +10,7 @@
         </router-link>
         <ul class="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <router-link to="/" aria-label="Strona główna przycisk nawigujący" title="Strona główna"
+            <router-link to="/#hero" aria-label="Strona główna przycisk nawigujący" title="Strona główna"
               class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400">
               Strona główna</router-link>
           </li>
@@ -33,6 +33,11 @@
             <router-link to="/#blog" aria-label="Blog przycisk nawigujący" title="Blog"
               class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400">
               Blog</router-link>
+          </li>
+          <li>
+            <router-link to="/#kontakt" aria-label="Kontakt przycisk nawigujący" title="Kontakt"
+              class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400">
+              Kontakt</router-link>
           </li>
         </ul>
         <ul class="flex items-center hidden space-x-8 lg:ml-40 lg:flex">
@@ -71,8 +76,9 @@
             <div class="p-5 bg-white border rounded shadow-sm">
               <div class="flex items-center justify-between mb-4">
                 <div>
-                  <router-link to="/" aria-label="Home przycisk" title="Home" class="inline-flex items-center">
-                    <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Logo</span>
+                  <router-link to="/" aria-label="Home przycisk" title="Home" class="inline-flex items-center ">
+                    <img src="../assets/poligrafia-logo-small.svg" alt="poligrafia-łowicz-logo" class="h-24">
+
                   </router-link>
                 </div>
                 <div>
@@ -90,7 +96,7 @@
               <nav>
                 <ul class="space-y-4">
                   <li>
-                    <router-link to="/" aria-label="Strona główna przycisk nawigujący" title="Strona główna"
+                    <router-link to="/#hero" aria-label="Strona główna przycisk nawigujący" title="Strona główna"
                       class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-accent-400">
                       Strona główna</router-link>
                   </li>
@@ -113,6 +119,11 @@
                     <router-link to="/#blog" aria-label="Blog przycisk nawigujący" title="Blog"
                       class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400">
                       Blog</router-link>
+                  </li>
+                  <li>
+                    <router-link to="/#kontakt" aria-label="Kontakt przycisk nawigujący" title="Kontakt"
+                      class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400">
+                      Kontakt</router-link>
                   </li>
                   <li>
                     <router-link to="/"

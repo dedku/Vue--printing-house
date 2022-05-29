@@ -6,7 +6,6 @@ module.exports = {
     "./public/**/*.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
     "./src/*.{vue,js,ts,jsx,tsx}",
-    "./node_modules/flowbite/dist/flowbite.js"
   ],
   theme: {
     extend: {
@@ -292,7 +291,4 @@ module.exports = {
     opacity: ['responsive', 'hover', 'focus', 'group-hover'],
     backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
   },
-  plugins: [
-    require('flowbite/plugin')
-  ],
 };

@@ -1,60 +1,40 @@
 <template>
-  <div class="h-screen overflow-hidden bg-violet-900">
-    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-28">
-      <div class="flex flex-col items-center justify-between xl:flex-row">
-                  <div class="w-full max-w-xl xl:px-8 xl:w-5/12">
-          <div class="relative">
-            <svg viewBox="0 0 52 24" fill="currentColor" class="absolute bottom-0 right-0 z-0 hidden w-32 -mb-8 -mr-20 text-teal-accent-400 lg:w-32 lg:-mr-16 sm:block">
-              <defs>
-                <pattern id="766323e1-e594-4ffd-a688-e7275079d540" x="0" y="0" width=".135" height=".30">
-                  <circle cx="1" cy="1" r=".7"></circle>
-                </pattern>
-              </defs>
-              <rect fill="url(#766323e1-e594-4ffd-a688-e7275079d540)" width="52" height="24"></rect>
-            </svg>
-            <div class="relative bg-white rounded shadow-2xl p-7 sm:p-10">
-              <h3 class="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
-                Zostaw swój numer, odzwonimy!
-              </h3>
-              <form>
-                <div class="mb-1 sm:mb-2">
-                  <label for="name" class="inline-block mb-1 font-medium">Imię</label>
-                  <input
-                    placeholder="Imię"
-                    type="text"
-                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-blue-accent-400 focus:outline-none focus:shadow-outline"
-                    id="name"
-                    name="name"
-                  />
-                </div>
-                <div class="mb-1 sm:mb-2">
-                  <label for="email" class="inline-block mb-1 font-medium">Telefon</label>
-                  <input
-                    placeholder="123456789"
-                    type="text"
-                    class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-blue-accent-400 focus:outline-none focus:shadow-outline"
-                    id="email"
-                    name="email"
-                  />
-                </div>
-                <div class="mt-4 mb-2 sm:mb-4">
-                  <button
-                    type="submit"
-                    class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-accent-400 hover:bg-blue-accent-700 focus:shadow-outline focus:outline-none"
-                  >
-                    Wyślij
-                  </button>
-                </div>
-              </form>
-            </div>
+  <div
+    class="text-gray-600 body-font relative px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:h-max "
+    id="kontakt">
+    <div class="absolute inset-0 bg-gray-300 rounded-lg">
+      <iframe class="rounded-lg "
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9802.142337870036!2d19.9123649!3d52.1063832!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb18fe923736c50b4!2sPoligrafia%20sp.j.!5e0!3m2!1spl!2spl!4v1653399025850!5m2!1spl!2spl"
+        width="100%" height="100%" style="border:0;" allowfullscreen="false" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="container px-5 py-24 mx-auto flex">
+      <div
+        class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
+        <h2
+          class="max-w-lg mb-5 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none md:mb-6 group">
+          <span class="inline-block mb-1 text-gray-900 sm:mb-4">
+            Kontakt<br class="hidden md:block" />
+          </span>
+          <div
+            class="h-1 ml-auto duration-300 origin-left transform bg-deep-purple-accent-400 scale-x-30 group-hover:scale-x-100">
           </div>
+        </h2>
+        <p class="leading-relaxed mb-5 text-gray-600">Pozostańmy w kontakcie!</p>
+        <div class="relative mb-4">
+          <label for="email" class="leading-7 text-gray-700 lg:text-sm lg:max-w-md">Email</label>
+          <input type="email" id="email" name="email" placeholder="Twój email"
+            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
-        <div class="w-full max-w-xl mb-12 xl:pr-16 xl:mb-0 xl:w-7/12">
-          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-            Pozostańmy w  <br class="hidden md:block" /><span class="text-green-500">kontakcie</span>
-          </h2>
-
+        <div class="relative mb-4">
+          <label for="message" class="leading-7 text-gray-700 lg:text-sm lg:max-w-md">Wiadomość</label>
+          <textarea id="message" name="message" placeholder="Wiadomość tekstowa..."
+            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
         </div>
+        <button
+          class="text-white bg-deep-purple-accent-400 border-0 py-2 px-6 focus:outline-none hover:bg-deep-purple-accent-200 rounded text-lg">Wyślij</button>
+        <p class="text-xs text-gray-500 mt-3">Odpowiadamy do 48h od otrzymania wiadomośći.
+        </p>
       </div>
     </div>
   </div>

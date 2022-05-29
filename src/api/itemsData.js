@@ -7,7 +7,9 @@ const _allData = [
   productsData.products,
   blogsData.blogs,
   sectionsData.stats,
-  sectionsData.customers
+  sectionsData.customers,
+  sectionsData.WhyWe,
+  sectionsData.AuthPartner,
 ]
 export default {
   getData (cb) {

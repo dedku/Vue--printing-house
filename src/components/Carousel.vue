@@ -48,3 +48,13 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+.carousel__next {
+  right: 20px;
+}
+
+.carousel__prev {
+  left: 20px;
+}
+</style>

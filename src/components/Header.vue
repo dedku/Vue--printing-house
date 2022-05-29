@@ -1,6 +1,7 @@
 <template>
   <div
-    class="flex flex-col-reverse lg:flex-row xl:flex-row px-4 pt-16 mx-auto bg-gradient-to-br from-white to-purple-300 pt-24 lg:pt-32 xl:pt-32 xl:pb-16 md:max-w-full lg:max-w-full">
+    class="flex flex-col-reverse lg:flex-row xl:flex-row px-4 pt-16 mx-auto bg-gradient-to-br from-white to-purple-300 pt-24 lg:pt-32 xl:pt-32 xl:pb-16 md:max-w-full lg:max-w-full"
+    id="hero">
 
     <!-- Carousel wrapper -->
     <Carousel class="xl:w-80 xl:ml-20 xl:flex-auto lg:flex-auto xl:pt-20 h-full mb-20 lg:mb-0" />
@@ -13,7 +14,7 @@
               class="h-32 inline-block px-3 py-px mb-1">
           </div>
           <h2
-            class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+            class="font-sans text-4xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
             {{ section.title }}<br class="hidden md:block" />
             <span class="inline-block text-deep-purple-accent-400">{{ section.titlePurple }}</span>
           </h2>
@@ -30,9 +31,9 @@
           <a v-show="isMobile" href="tel:+48504128606" aria-label=""
             class="inline-flex items-center font-semibold  h-12 px-6 mr-6  text-gray-800 rounded transition-colors duration-200 shadow-inner ring-green-500 ring-2 flex-colring-2 hover:text-gray-200 hover:shadow-md hover:bg-green-500">
             Zadzwoń </a>
-          <a v-show="!isMobile" aria-label=""
+          <router-link v-show="!isMobile" aria-label="" to="/#kontakt"
             class="inline-flex items-center font-semibold  h-12 px-6 mr-6  text-gray-800 rounded transition-colors duration-200 shadow-inner ring-green-500 ring-2 flex-colring-2 hover:text-gray-200 hover:shadow-md hover:bg-green-500">
-            Napisz do nas </a>
+            Napisz do nas </router-link>
         </div>
         <hr class="mb-8 border-purple-300 mt-12 lg:mt-0" />
         <div class="flex">

@@ -5,10 +5,11 @@
     <Stats :stats="stats" />
     <Customers :customers="customers[0]" />
     <Products :products="products" />
-    <About />
+    <About :whywe="whywe[0]" />
     <Books />
-    <Assets />
+    <Assets :authPart="authPartner[0]" />
     <Blog />
+    <Contact />
     <Footer />
   </div>
 </template>
@@ -33,6 +34,8 @@ const Customers = defineAsyncComponent(() =>
   import('../components/Customers.vue'))
 const Blog = defineAsyncComponent(() =>
   import('../components/Blog.vue'))
+const Contact = defineAsyncComponent(() =>
+  import('../components/Contact.vue'))
 import Products from '../components/Products.vue';
 
 export default {
@@ -46,7 +49,8 @@ export default {
     Footer,
     Products,
     Blog,
-    Customers
+    Customers,
+    Contact,
   },
   data() {
     return {
@@ -60,6 +64,8 @@ export default {
       blogs: state => state.dataItems.blogs,
       stats: state => state.dataItems.stats,
       customers: state => state.dataItems.customers,
+      whywe: state => state.dataItems.whywe,
+      authPartner: state => state.dataItems.authPartner,
     })
   },
   methods: {

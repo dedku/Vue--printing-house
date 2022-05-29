@@ -8,7 +8,9 @@ export default {
     products: [],
     blogs: [],
     stats:[],
-    customers: []
+    customers: [],
+    whywe: [],
+    authPartner: []
   },
   mutations: {
     setData (state, allData) {
@@ -17,6 +19,8 @@ export default {
       state.blogs = allData[2]
       state.stats = allData[3]
       state.customers = allData[4]
+      state.whywe = allData[5]
+      state.authPartner = allData[6]
     }
   },
   actions: {

@@ -8,6 +8,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+    meta: {title: `Poligrafia Łowicz - Strona główna`}
   },
   {
     path: '/uslugi',
