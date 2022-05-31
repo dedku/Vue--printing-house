@@ -76,7 +76,7 @@
       </div>
     </div>
     <div class="text-center">
-      <router-link to="#" aria-label=""
+      <router-link to="/blog" aria-label=""
         class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
         Zobacz więcej
         <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">

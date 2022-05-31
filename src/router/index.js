@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Uslugi from '../views/Uslugi.vue'
 import Wydawnictwo from '../views/Wydawnictwo.vue'
 
 const routes = [
@@ -11,9 +10,9 @@ const routes = [
     meta: {title: `Poligrafia Łowicz - Strona główna`}
   },
   {
-    path: '/uslugi',
-    name: 'Usługi',
-    component: Uslugi
+    path: '/blog',
+    name: 'Blog',
+    component: () => import(/* webpackChunkName: Uslugi */ '../views/Uslugi.vue')
   },
   {
     path: '/wydawnictwo',
@@ -32,8 +31,10 @@ const router = createRouter({
           behavior: 'smooth',
           top:65,
         }
-      }
+    } else {
+      return { top: 0 }
   }
+}
 })
 
 export default router
