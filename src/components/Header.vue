@@ -1,14 +1,14 @@
 <template>
   <div
-    class="flex flex-col-reverse lg:flex-row xl:flex-row px-4 pt-16 mx-auto bg-gradient-to-br from-white to-purple-300 pt-24 lg:pt-32 xl:pt-32 xl:pb-16 md:max-w-full lg:max-w-full"
+    class="flex flex-col-reverse lg:flex-row xl:flex-row px-4 pt-16 mx-auto bg-gradient-to-br from-white to-purple-300 pt-24 lg:pt-32 xl:pt-32 xl:pb-16 h-full lg:h-screen xl:h-screen"
     id="hero">
 
     <!-- Carousel wrapper -->
-    <Carousel class="xl:w-80 xl:ml-20 xl:flex-auto lg:flex-auto xl:pt-20 h-full mb-20 lg:mb-0" />
+    <Carousel class="h-full lg:w-1/2 xl:ml-20 lg:flex-auto xl:pt-2 mb-20 lg:mb-0" />
 
-    <div class="mt-12 xl:w-20 xl:flex-auto lg:flex-auto h-full lg:mt-0">
-      <div class="mb-0 pt-8 lg:max-w-lg ">
-        <div class="max-w-xl mb-8">
+    <div class="mt-12 h-full lg:pl-24 xl:pl-28 lg:w-1/2 lg:flex-auto lg:mt-0 ">
+      <div class="mb-0 pt-8 lg:max-w-lg">
+        <div class="lg:max-w-xl lg:mb-8 items-center justify-center">
           <div>
             <img src="../assets/poligrafia-logo-main.svg" alt="poligrafia-łódź-small"
               class="h-32 inline-block px-3 py-px mb-1">

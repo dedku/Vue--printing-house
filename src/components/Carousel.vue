@@ -1,5 +1,5 @@
 <template>
-  <Carousel class="overflow-auto justify-center items-center h-96 rounded-lg sm:h-80 xl:h-96 2xl:h-128"
+  <Carousel class=" justify-center items-center h-96 rounded-lg xl:h-96 2xl:h-128"
     :autoplay="hover == false ? 4500 : 30000" :wrap-around="true" @click="stopAuto">
     <Slide v-for="product in headerProducts" :key="product.id">
       <img class="carousel__item h-96" :src="getImgUrl(product.url)">

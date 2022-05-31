@@ -1,8 +1,7 @@
 <template>
   <div :class="{ 'scrolled': !view.atTopOfPage }"
     class="fixed top-0 z-50 inset-x-0 transition ease-out duration-200 text-lg">
-    <div
-      class="px-2 py-1 sm:mx-auto lg:mr-20 lg:ml-50 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:pr-8 lg:pl-2">
+    <div class="px-2 py-1 sm:mx-auto  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:pr-8 lg:pl-2">
       <div class="relative flex items-center justify-between sm:justify-between md:justify-between">
         <router-link to="/" aria-label="Home przycisk" title="Home" class="inline-flex items-center ">
           <img src="../assets/poligrafia-logo-small.svg" alt="poligrafia-łowicz-logo" class="h-24">
