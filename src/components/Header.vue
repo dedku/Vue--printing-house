@@ -4,25 +4,25 @@
     id="hero">
 
     <!-- Carousel wrapper -->
-    <Carousel class="h-full lg:w-1/2 xl:ml-20 lg:flex-auto xl:pt-2 mb-20 lg:mb-0" />
+    <Carousel class="h-full lg:w-1/2 xl:ml-20 lg:flex-auto xl:pt-2 mt-8 mb-20 xl:h-screen" />
 
-    <div class="mt-12 h-full lg:pl-24 xl:pl-28 lg:w-1/2 lg:flex-auto lg:mt-0 ">
+    <div class=" h-full lg:pl-24 xl:ml-28 lg:w-1/2 lg:flex-auto lg:mt-0 md:h-screen">
       <div class="mb-0 pt-8 lg:max-w-lg">
         <div class="lg:max-w-xl lg:mb-8 items-center justify-center">
           <div>
             <img src="../assets/poligrafia-logo-main.svg" alt="poligrafia-łódź-small"
-              class="h-32 inline-block px-3 py-px mb-1">
+              class="h-32 inline-block px-3 py-px mb-1 ">
           </div>
           <h2
             class="font-sans text-4xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-            {{ section.title }}<br class="hidden md:block" />
-            <span class="inline-block text-deep-purple-accent-400">{{ section.titlePurple }}</span>
+            {{ header.title }}<br class="hidden md:block" />
+            <span class="inline-block text-deep-purple-accent-400">{{ header.titlePurple }}</span>
           </h2>
-          <p class="mt-10 text-base text-gray-700 md:text-lg lg:mt-0">
-            {{ section.content }}
+          <p class="mt-10 text-base text-gray-700 md:text-lg ">
+            {{ header.content }}
           </p>
         </div>
-        <div class="flex items-center mb-8 justify-center mt-10 lg:mt-0">
+        <div class="flex items-center mb-8 justify-center mt-10 ">
           <router-link
             class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-200 hover:shadow-md focus:shadow-outline focus:outline-none"
             to="#produkty">
@@ -35,12 +35,12 @@
             class="inline-flex items-center font-semibold  h-12 px-6 mr-6  text-gray-800 rounded transition-colors duration-200 shadow-inner ring-green-500 ring-2 flex-colring-2 hover:text-gray-200 hover:shadow-md hover:bg-green-500">
             Napisz do nas </router-link>
         </div>
-        <hr class="mb-8 border-purple-300 mt-12 lg:mt-0" />
+        <hr class="mb-8 border-purple-300 mt-12 " />
         <div class="flex">
           <div class="flex flex-col">
-            <div class="text-md font-semibold flex items-center px-16">
-              Zaufali nam m. in. :
-              <CarouselPartner class="h-auto" :section="section" />
+            <div class="text-md font-semibold flex items-center ">
+              <p class="whitespace-nowrap pr-8">Zaufali nam m. in. :</p>
+              <CarouselPartner class="h-auto" :header="header" />
             </div>
           </div>
         </div>
@@ -61,14 +61,10 @@ export default {
     CarouselPartner,
   },
   props: {
-    section: {
+    header: {
       type: Object,
       default: () => { },
     },
-    products: {
-      type: Object,
-      default: () => { },
-    }
   },
   data() {
     return {

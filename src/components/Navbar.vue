@@ -1,13 +1,13 @@
 <template>
   <div :class="{ 'scrolled': !view.atTopOfPage }"
-    class="fixed top-0 z-50 inset-x-0 transition ease-out duration-200 text-lg">
+    class="fixed top-0 z-50 inset-x-0 transition ease-out duration-200 text-sm xl:text-lg">
     <div class="px-2 py-1 sm:mx-auto  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-10 lg:pr-8 lg:pl-2">
-      <div class="relative flex items-center justify-between sm:justify-between md:justify-between">
-        <router-link to="/" aria-label="Home przycisk" title="Home" class="inline-flex items-center ">
+      <div class="relative flex items-center justify-between sm:justify-between md:justify-between whitespace-nowrap">
+        <router-link to="/" aria-label="Home przycisk" title="Home" class=" items-center ">
           <img src="../assets/poligrafia-logo-small.svg" alt="poligrafia-łowicz-logo" class="h-24">
 
         </router-link>
-        <ul class="flex items-center hidden space-x-8 lg:flex">
+        <ul class="flex items-center hidden space-x-8  lg:flex">
           <li>
             <router-link to="/#hero" aria-label="Strona główna przycisk nawigujący" title="Strona główna"
               class="font-medium tracking-wide text-gray-700 transition duration-200 border-b-2 border-transparent hover:border-deep-purple-accent-400">
@@ -42,7 +42,8 @@
         <ul class="flex items-center hidden space-x-8 lg:ml-40 lg:flex">
           <li>
             <a class="inline-flex items-center justify-center h-12 gap-2 text-gray-800 " href="tel:+48504128606">
-              <box-icon animation="tada" color="green" type='solid' name='phone-call'></box-icon>
+              <box-icon animation="tada" color="green" type='solid' name='phone-call'>
+              </box-icon>
               +48 504 128 606
             </a>
           </li>

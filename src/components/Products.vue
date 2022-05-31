@@ -1,5 +1,5 @@
 <template >
-  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 h-screen"
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 h-full"
     id="produkty">
     <div class="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
       <h2
@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import { VueFinalModal } from 'vue-final-modal'
 export default {
   name: 'Customers',
@@ -77,6 +77,7 @@ export default {
       modalVisible: false,
       modalData: null,
       modalTitle: null,
+      loading: false
     }
   },
   computed: {
@@ -97,6 +98,13 @@ export default {
       this.modalTitle = data.title
       this.modalVisible = true
     },
+    ...mapActions({
+      fetchData: 'dataItems/fetchData',
+    })
+  },
+  created() {
+    this.loading = true
+    this.fetchData().then(() => this.loading = false)
   },
 }
 </script>

@@ -17,58 +17,18 @@
       </p>
     </div>
     <div class="grid gap-8 mb-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
-      <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
-        <img src="../assets/bazylika.png" class="object-cover w-full h-64" alt="" />
+      <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm"
+        v-for="book in books.slice(0, 3)" :key="book.id">
+        <img :src="getImgUrl(book.image)" class="object-cover w-full h-64" :alt="book.title" />
         <div class="p-5 border border-t-0">
           <p class="mb-3 text-xs text-right font-semibold tracking-wide uppercase">
-            <span class="text-gray-600">ks. Stanisław Majkut</span>
+            <span class="text-gray-600">{{ book.author }}</span>
           </p>
           <div class="text-left">
-            <a href="#" aria-label="Category" title="Visit the East"
-              class="inline-block text-right mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700">Bazylika
-              katedralna w Łowiczu</a>
-            <p class="mb-2 text-gray-700">
-              W 2000 roku minęła dziewięćsetna rocznica istnienia dawnej kolegiaty prymasowskiej aoobecnie bazyliki
-              katedralnej w Łowiczu ...
-            </p>
-            <a href="#" aria-label=""
-              class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Sprawdź</a>
-          </div>
-        </div>
-      </div>
-      <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
-        <img src="../assets/moje_lowickie.jpg" class="object-cover w-full h-64" alt="" />
-        <div class="p-5 border border-t-0">
-          <p class="mb-3 text-xs text-right font-semibold tracking-wide uppercase">
-            <span class="text-gray-600">Joanna Bolimowska</span>
-          </p>
-          <div class="text-left">
-            <a href="#" aria-label="Category" title="Simple is better"
-              class="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700">Moje
-              Łowickie</a>
-            <p class="mb-2 text-gray-700">
-              Zachowanie swojej tradycji, kultury, tożsamości narodowej, w tym również przywiązanie do regionalnej
-              tradycji ...
-            </p>
-            <a href="#" aria-label=""
-              class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Sprawdź</a>
-          </div>
-        </div>
-      </div>
-      <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
-        <img src="../assets/ludzie_i_czasy.png" class="object-cover w-full h-64" alt="" />
-        <div class="p-5 border border-t-0">
-          <p class="mb-3 text-xs text-right font-semibold tracking-wide uppercase">
-            <span class="text-gray-600">Stanisław Cisak</span>
-          </p>
-          <div class="text-left">
-            <a href="#" aria-label="Category" title="Film It!"
-              class="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700">Ludzie
-              i czasy Środka Polski</a>
-            <p class="mb-2 text-gray-700">
-              Stanisław Cisak z pasją opisał życie religijne mieszkańców i zabytki sakralne.
-              W większym stopniu scharakteryzował rolę ...
-            </p>
+            <a href="#" :title="book.title"
+              class="inline-block text-left mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
+              v-html="dotAfterText(book.title, 31)" />
+            <p class="mb-2 text-gray-700" v-html="dotAfterText(book.content, 140)" />
             <a href="#" aria-label=""
               class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Sprawdź</a>
           </div>
@@ -76,7 +36,7 @@
       </div>
     </div>
     <div class="text-center">
-      <router-link to="/blog" aria-label=""
+      <router-link to="/wydawnictwo" aria-label=""
         class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
         Zobacz więcej
         <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
@@ -88,3 +48,24 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Books',
+  props: {
+    books: {
+      type: Object,
+      default: () => { },
+    }
+  },
+  methods: {
+    getImgUrl(url) {
+      const images = require.context('../assets/', false, /\.png$/)
+      return images('./' + url + ".png")
+    },
+    dotAfterText(text, size) {
+      return text.length > size ? text.slice(0, size - 1) + "..." : text
+    }
+  },
+}
+</script>

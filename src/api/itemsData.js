@@ -1,11 +1,13 @@
 import { sectionsData } from './data/sections'
 import { productsData } from './data/products'
 import { blogsData } from './data/blogs'
+import { booksData } from './data/books'
 
 const _allData = [
-  sectionsData.header,
   productsData.products,
   blogsData.blogs,
+  booksData.books,
+  sectionsData.header,
   sectionsData.stats,
   sectionsData.customers,
   sectionsData.WhyWe,

@@ -1,12 +1,12 @@
 <template>
   <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif">
   <div v-else>
-    <Header :section="sections[0]" :products="products" />
+    <Header :header="header[0]" />
     <Stats :stats="stats" />
     <Customers :customers="customers[0]" />
-    <Products :products="products" />
+    <Products />
     <About :whywe="whywe[0]" />
-    <Books />
+    <Books :books="books" />
     <Assets :authPart="authPartner[0]" />
     <Blog />
     <Contact />
@@ -59,13 +59,13 @@ export default {
   },
   computed: {
     ...mapState({
-      sections: state => state.dataItems.sections,
-      products: state => state.dataItems.products,
+      header: state => state.dataItems.header,
       blogs: state => state.dataItems.blogs,
       stats: state => state.dataItems.stats,
       customers: state => state.dataItems.customers,
       whywe: state => state.dataItems.whywe,
       authPartner: state => state.dataItems.authPartner,
+      books: state => state.dataItems.books,
     })
   },
   methods: {

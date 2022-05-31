@@ -4,23 +4,25 @@ export default {
   namespaced: true,
 
   state: {
-    sections: [],
+    header: [],
     products: [],
     blogs: [],
     stats:[],
     customers: [],
     whywe: [],
-    authPartner: []
+    authPartner: [],
+    books: []
   },
   mutations: {
     setData (state, allData) {
-      state.sections = allData[0]
-      state.products = allData[1]
-      state.blogs = allData[2]
-      state.stats = allData[3]
-      state.customers = allData[4]
-      state.whywe = allData[5]
-      state.authPartner = allData[6]
+      state.products = allData[0]
+      state.blogs = allData[1]
+      state.books = allData[2]
+      state.header = allData[3]
+      state.stats = allData[4]
+      state.customers = allData[5]
+      state.whywe = allData[6]
+      state.authPartner = allData[7]
     }
   },
   actions: {
@@ -39,6 +41,6 @@ export default {
     },
     webProducts (state) {
       return state.products.filter(product => product.produkty)
-    }
+    },
   }
 }

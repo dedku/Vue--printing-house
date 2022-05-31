@@ -1,8 +1,8 @@
 <template>
   <div
-    class="text-gray-600 body-font relative px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:h-max "
+    class="text-gray-600 md:px-24 lg:px-8 body-font relative px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl lg:h-max "
     id="kontakt">
-    <div class="absolute inset-0 bg-gray-300 rounded-lg">
+    <div class="absolute inset-0 bg-gray-300 rounded-lg ">
       <iframe class="rounded-lg "
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9802.142337870036!2d19.9123649!3d52.1063832!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb18fe923736c50b4!2sPoligrafia%20sp.j.!5e0!3m2!1spl!2spl!4v1653399025850!5m2!1spl!2spl"
         width="100%" height="100%" style="border:0;" allowfullscreen="false" loading="lazy"

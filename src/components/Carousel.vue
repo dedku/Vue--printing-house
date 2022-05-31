@@ -1,8 +1,8 @@
 <template>
-  <Carousel class=" justify-center items-center h-96 rounded-lg xl:h-96 2xl:h-128"
-    :autoplay="hover == false ? 4500 : 30000" :wrap-around="true" @click="stopAuto">
+  <Carousel class=" justify-center items-center h-auto rounded-lg " :autoplay="hover == false ? 4500 : 30000"
+    :wrap-around="true" @click="stopAuto">
     <Slide v-for="product in headerProducts" :key="product.id">
-      <img class="carousel__item h-96" :src="getImgUrl(product.url)">
+      <img class="carousel__item h-auto" :src="getImgUrl(product.url)">
     </Slide>
 
     <template #addons>

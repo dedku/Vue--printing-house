@@ -1,12 +1,12 @@
 <template>
   <Waypoint @change="autoinitStart">
     <div class="overflow-hidden rounded-b-lg bg-violet-900">
-      <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 ">
         <div class="grid grid-cols-2 row-gap-8 md:grid-cols-4">
           <div class="text-center" v-for="stat in stats" :key="stat.id">
             <vue3-autocounter class="text-4xl font-bold text-white lg:text-5xl xl:text-6xl" ref="stats" :startAmount='0'
               :endAmount='stat.endAmount' :duration='stat.duration' :suffix='stat.suffix' :autoinit='false' />
-            <p class="text-sm font-medium tracking-widest text-white uppercase lg:text-base">
+            <p class="text-sm font-medium tracking-widest text-white uppercase lg:text-base pb-8">
               {{ stat.title }}
             </p>
           </div>

@@ -1,7 +1,7 @@
 <template>
   <Carousel class="overflow-auto justify-center items-center" :autoplay="4500" :wrap-around="true" :items-to-show="2"
     snapAlign="start">
-    <Slide v-for="image in section.zaufaliNamImg" :key="image.id">
+    <Slide v-for="image in header.zaufaliNamImg" :key="image.id">
       <img class="carousel__item" :src="getImgUrl(image.url)" :alt="image.alt">
     </Slide>
 
@@ -24,7 +24,7 @@ export default defineComponent({
 
   },
   props: {
-    section: {
+    header: {
       type: Object,
       default: () => { },
     }
