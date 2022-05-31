@@ -25,65 +25,30 @@
                 najbardziej wymagające - albumy książkowe, katalogi oraz opakowania, kalendarze etc.
             </p>
         </div>
-        <div class="books">
-            <div class="flex flex-row max-w-screen-lg gap-8 mb-24 booked sm:mx-auto" v-for="book in books"
-                :key="book.id">
-                <img class="object-cover w-h-full rounded shadow-lg" :src="getImgUrl(book.image)" />
-                <div class="flex flex-col justify-center">
-                    <div class="pb-4 mb-4 border-b">
-                        <h6 class="mb-2 font-semibold tracking-wide leading-5">
-                            11 miesięcy albo o poszukiwaniu drogi
-                        </h6>
-                        <p class="text-sm text-gray-900">
-                            Michał B. Kacprowicz
-                        </p>
-                    </div>
-                    <div class="pb-4 mb-4 border-b">
-                        <p class="text-sm text-justify text-gray-900 whitespace-pre-line">
-                            Bóg nigdy nie czyni dwa razy tego samego. Wszystko ma przypisany, właściwy sobie czas.
-                            To co zaś
-                            czyni jest doskonałe. Bóg nigdy się nie myli, nie testuje. Bóg wie! Wiatr wieje, deszcz
-                            pada,
-                            słońce świeci. Czy nam się to podoba, czy też nie. Taka jest po prostu rzeczywistość.
-                            Dlaczego
-                            zatem tak trudno pogodzić się z powyższym? Sam nie wiem. Może to kwestia pokory. Tego
-                            prawdziwego złota i bogactwa. A czym jest pokora? Pokora to nie uniżenie, ale zgoda na
-                            rzeczywistość ‒ jaka by ona nie była (a czasem serio jest wspaniała). Jak lekko jest
-                            człowiekowi, który akceptuje dany mu aktualnie obraz siebie, obraz rzeczywistości! Piszę
-                            specjalnie „dany aktualnie”, bo Ojciec kochając nas w Sobie właściwy, nieskończony
-                            sposób z
-                            miłości dawkuje nam te obrazy. Prowadząc nas za rękę, zawsze daje nam pomoc „na ten
-                            czas”. To
-                            dlatego można słuchać tej samej konferencji 10 razy i_zaokażdym razem wynieść z niej coś
-                            innego.
-                            Bądź wola Twoja! Pokój, który po tych słowach przychodzi do serca jest nieporównywalny z
-                            niczym.
-                            Zamykam oczy i śpię, ale to nie sen. To wielkie ach. Ale nie zawsze tak jest. Zwykle
-                            pierwszą
-                            reakcją na rzeczywistość jest ułuda jej kontrolowania (przynajmniej dla mnie) i
-                            nastawienie na
-                            walkę. Przecież „mam rację”. Niech się dzieje „moja wola”. Cel jest słuszny.
-                            „Na końcu wszystko będzie dobrze. Jeśli aktualnie nie jest, to znaczy, że to jeszcze nie
-                            koniec.”
-                        </p>
-                    </div>
-                    <div class="flex justify-center gap-4">
-                        <h6 class="mb-2 font-semibold tracking-wide leading-5">
-                            116 x 159 mm
-                        </h6>
-                        <h6 class="mb-2 font-semibold tracking-wide leading-5">
-                            174 stron
-                        </h6>
-                        <h6 class="mb-2 font-semibold tracking-wide leading-5">
-                            oprawa miękka, szyta
-                        </h6>
-                    </div>
-                    <router-link
-                        class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-200 hover:shadow-md focus:shadow-outline focus:outline-none"
-                        to="#produkty">
-                        Zamów
-                    </router-link>
+        <div class="flex flex-row max-w-screen-lg gap-8 mb-24 booked sm:mx-auto" v-for="book in books" :key="book.id">
+            <img class="object-cover w-h-full rounded shadow-lg" :src="getImgUrl(book.image)" :alt="book.title" />
+            <div class="flex flex-col justify-center">
+                <div class="pb-4 mb-4 border-b">
+                    <h6 class="mb-2 font-semibold tracking-wide leading-5">
+                        {{ book.title }}
+                    </h6>
+                    <p class="text-sm text-gray-900">
+                        {{ book.author }}
+                    </p>
                 </div>
+                <div class="pb-4 mb-4 border-b">
+                    <p class="text-sm text-justify text-gray-900 whitespace-pre-line" v-html="book.content" />
+                </div>
+                <div class="flex justify-center gap-4">
+                    <h6 class="mb-2 font-semibold tracking-wide leading-5" v-for="asset in book.assets" :key="asset.id">
+                        {{ asset.text }}
+                    </h6>
+                </div>
+                <router-link
+                    class="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-200 hover:shadow-md focus:shadow-outline focus:outline-none"
+                    to="#produkty">
+                    Zamów
+                </router-link>
             </div>
         </div>
     </div>
@@ -120,7 +85,7 @@ export default {
 </script>
 
 <style scoped>
-.books .booked:nth-child(even) {
+.booked:nth-child(even) {
     flex-direction: row-reverse;
 }
 </style>
