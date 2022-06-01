@@ -8,7 +8,7 @@
     <About :whywe="whywe[0]" />
     <Books :books="books" />
     <Assets :authPart="authPartner[0]" />
-    <Blog />
+    <Blog :blogs="blogs" />
     <Contact />
     <Footer />
   </div>

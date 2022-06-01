@@ -49,7 +49,7 @@
     <div class="text-center">
       <button aria-label=""
         class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-        @click="productsVisible += showMoreProd" v-if="productsVisible < webProducts.length">
+        @click="activeProducts += showMoreProd" v-if="activeProducts < webProducts.length">
         Zobacz więcej
         <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
           <path
@@ -71,7 +71,7 @@ export default {
   },
   data() {
     return {
-      productsVisible: 4,
+      activeProducts: 4,
       showMoreProd: 4,
       modals: [],
       modalVisible: false,
@@ -85,7 +85,7 @@ export default {
       webProducts: 'webProducts'
     }),
     visibleProducts() {
-      return this.webProducts.slice(0, this.productsVisible)
+      return this.webProducts.slice(0, this.activeProducts)
     }
   },
   methods: {

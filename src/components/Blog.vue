@@ -12,96 +12,67 @@
       </h2>
     </div>
     <div class="grid gap-10 mb-8 row-gap-8 text-left lg:grid-cols-5">
-      <div class="lg:col-span-2">
+      <div class="lg:col-span-2" v-for="blog in blogs.slice(0, 1)" :key="blog.id">
         <p class="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase">
-          20 Gru 2020
+          {{ blog.date }}
         </p>
         <div class="mb-3">
-          <a href="#" aria-label="Article"
+          <router-link :to="'/blog/' + blog.slug" aria-label="Article"
             class="inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-400">
             <p class="font-sans text-xl font-extrabold leading-none tracking-tight lg:text-4xl xl:text-5xl">
-              Kontrola jakości i powtarzalność druku
+              {{ blog.title }}
             </p>
-          </a>
+          </router-link>
         </div>
-        <p class="mb-4 text-base text-gray-700 md:text-lg">
-          Jako wydawca czy marketingowiec dbasz oto, aby czasopisma i katalogi zawsze trzymały standard, miały te same
-          parametry ...
-        </p>
+        <p class="mb-4 text-base text-gray-700 md:text-lg" v-html="dotAfterText(blog.content, 390)" />
         <div class="flex items-center">
           <a href="#" aria-label="Author" class="mr-3">
-            <img alt="avatar" src="../assets/Avatar.png" class="object-cover w-10 h-10 rounded-full shadow-sm" />
+            <img alt="avatar" :src="getImgUrl(blog.image)" class="object-cover w-10 h-10 rounded-full shadow-sm" />
           </a>
           <div>
             <a href="#" aria-label="Author"
-              class="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400">Poligrafia
-              Łowicz</a>
+              class="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400">{{
+                  blog.author
+              }}</a>
             <p class="text-sm font-medium leading-4 text-gray-600">Autor</p>
           </div>
         </div>
       </div>
       <div class="flex flex-col space-y-8 lg:col-span-3">
-        <div>
+        <div v-for="blog in visibleBlogs" :key="blog.id">
           <p class="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase">
-            14 Sie 2020
+            {{ blog.date }}
           </p>
           <div class="mb-3">
-            <a href="#" aria-label="Article"
+            <router-link :to="'/blog/' + blog.slug" aria-label="Article"
               class="inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-400">
-              <p class="font-sans text-xl font-extrabold leading-none tracking-tight lg:text-2xl">
-                Ile kosztuje wydrukowanie książki?
+              <p class="font-sans text-xl font-extrabold leading-none tracking-tight lg:text-4xl xl:text-5xl">
+                {{ blog.title }}
               </p>
-            </a>
+            </router-link>
           </div>
-          <p class="mb-4 text-base text-gray-700 md:text-lg">
-            Rzecz najważniejsza – istotna jest wielkość nakładu. Jeśli startujesz z wysokiego pułapu i chcesz wydrukować
-            np. 8 tysięcy egzemplarzy książki – w przypadku wyboru naszej drukarni efektywne ekonomicznie ...
-          </p>
+          <p class="mb-4 text-base text-gray-700 md:text-lg" v-html="dotAfterText(blog.content, 190)" />
           <div class="flex items-center">
             <a href="#" aria-label="Author" class="mr-3">
-              <img alt="avatar" src="../assets/Avatar.png" class="object-cover w-10 h-10 rounded-full shadow-sm" />
+              <img alt="avatar" :src="getImgUrl(blog.image)" class="object-cover w-10 h-10 rounded-full shadow-sm" />
             </a>
             <div>
               <a href="#" aria-label="Author"
-                class="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400">Poligrafia
-                Łowicz</a>
+                class="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400">{{
+                    blog.author
+                }}</a>
               <p class="text-sm font-medium leading-4 text-gray-600">Autor</p>
             </div>
           </div>
-        </div>
-        <div>
-          <p class="mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase">
-            18 Mar 2020
-          </p>
-          <div class="mb-3">
-            <a href="#" aria-label="Article"
-              class="inline-block text-black transition-colors duration-200 hover:text-deep-purple-accent-400">
-              <p class="font-sans text-xl font-extrabold leading-none tracking-tight lg:text-2xl">
-                Jak prawidłowo stworzyć folder reklamowy?
-              </p>
-            </a>
-          </div>
-          <p class="mb-4 text-base text-gray-700 md:text-lg">
-            Doskonale sprawdza się do promowania świadczonych usług czy nowych produktów wprowadzanych do oferty.
-            Foldery reklamowe wykorzystują firmy działające w wielu różnych ...
-          </p>
-          <div class="flex items-center">
-            <a href="#" aria-label="Author" class="mr-3">
-              <img alt="avatar" src="../assets/Avatar.png" class="object-cover w-10 h-10 rounded-full shadow-sm" />
-            </a>
-            <div>
-              <a href="#" aria-label="Author"
-                class="font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-400">Poligrafia
-                Łowicz</a>
-              <p class="text-sm font-medium leading-4 text-gray-600">Autor</p>
-            </div>
+          <div>
           </div>
         </div>
       </div>
     </div>
     <div class="text-center">
       <router-link to="#" aria-label=""
-        class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+        class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+        @click="activeBlogs += showMoreBlogs" v-if="activeBlogs < blogs.length">
         Zobacz więcej
         <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
           <path
@@ -112,3 +83,35 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "Blogs",
+  props: {
+    blogs: {
+      type: Object,
+      default: () => { },
+    }
+  },
+  data() {
+    return {
+      activeBlogs: 2,
+      showMoreBlogs: 2,
+    }
+  },
+  methods: {
+    getImgUrl(url) {
+      const images = require.context('../assets/', false, /\.png$/)
+      return images('./' + url + ".png")
+    },
+    dotAfterText(text, size) {
+      return text.length > size ? text.slice(0, size - 1) + "..." : text
+    }
+  },
+  computed: {
+    visibleBlogs() {
+      return this.blogs.slice(1, this.activeBlogs + 1)
+    }
+  },
+}
+</script>

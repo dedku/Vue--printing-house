@@ -42,5 +42,8 @@ export default {
     webProducts (state) {
       return state.products.filter(product => product.produkty)
     },
+    getBlogBySlug: (state) => (slug) => {
+      return state.blogs.find(blog => blog.slug === slug)
+    }
   }
 }
