@@ -25,7 +25,8 @@
                 najbardziej wymagające - albumy książkowe, katalogi oraz opakowania, kalendarze etc.
             </p>
         </div>
-        <div class="flex flex-row max-w-screen-lg gap-8 mb-24 booked sm:mx-auto" v-for="book in books" :key="book.id">
+        <div class="flex flex-row max-w-screen-lg gap-8 mb-24 booked sm:mx-auto" v-for="book in books" :key="book.id"
+            :id="book.id">
             <img class="object-cover w-h-full rounded shadow-lg" :src="getImgUrl(book.image)" :alt="book.title" />
             <div class="flex flex-col justify-center">
                 <div class="pb-4 mb-4 border-b">

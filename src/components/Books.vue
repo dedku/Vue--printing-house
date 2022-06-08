@@ -25,12 +25,13 @@
             <span class="text-gray-600">{{ book.author }}</span>
           </p>
           <div class="text-left">
-            <a href="#" :title="book.title"
-              class="inline-block text-left mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
+            <router-link :to="bookId(book.id)" :title="book.title"
+              class="inline-blck text-left mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
               v-html="dotAfterText(book.title, 31)" />
             <p class="mb-2 text-gray-700" v-html="dotAfterText(book.content, 140)" />
-            <a href="#" aria-label=""
-              class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Sprawdź</a>
+            <router-link :to="bookId(book.id)" aria-label=""
+              class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+              Sprawdź</router-link>
           </div>
         </div>
       </div>
@@ -65,6 +66,9 @@ export default {
     },
     dotAfterText(text, size) {
       return text.length > size ? text.slice(0, size - 1) + "..." : text
+    },
+    bookId(book) {
+      return `/wydawnictwo/#` + book
     }
   },
 }

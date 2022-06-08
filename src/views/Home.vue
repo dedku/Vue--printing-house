@@ -1,6 +1,7 @@
 <template>
   <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif">
   <div v-else>
+    <Navbar />
     <Header :header="header[0]" />
     <Stats :stats="stats" />
     <Customers :customers="customers[0]" />
@@ -18,6 +19,7 @@
 import { mapState, mapActions } from 'vuex';
 import { defineAsyncComponent } from 'vue'
 
+import Navbar from '../components/Navbar.vue'
 import Header from '@/components/Header.vue'
 const Stats = defineAsyncComponent(() =>
   import('../components/Stats.vue')
@@ -41,6 +43,7 @@ import Products from '../components/Products.vue';
 export default {
   name: 'Home',
   components: {
+    Navbar,
     Header,
     Stats,
     About,

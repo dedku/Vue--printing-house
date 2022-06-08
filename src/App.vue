@@ -1,16 +1,13 @@
 <template>
-  <Navbar/>
-  <router-view/>
+  <router-view />
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
 
 export default {
   name: 'App',
- components: {
-    Navbar,
- }
+  components: {
+  }
 }
 </script>
 
@@ -19,5 +16,4 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
 </style>

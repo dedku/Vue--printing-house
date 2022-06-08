@@ -11,10 +11,10 @@
         <div class="lg:max-w-xl lg:mb-8 items-center justify-center">
           <div>
             <img src="../assets/poligrafia-logo-main.svg" alt="poligrafia-łódź-small"
-              class="h-32 inline-block px-3 py-px mb-1 ">
+              class="h-32 inline-block px-3 py-px mb-1 sm:h-16">
           </div>
           <h2
-            class="font-sans text-4xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+            class="font-sans text-4xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-3xl sm:leading-none">
             {{ header.title }}<br class="hidden md:block" />
             <span class="inline-block text-deep-purple-accent-400">{{ header.titlePurple }}</span>
           </h2>
