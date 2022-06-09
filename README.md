@@ -23,7 +23,8 @@ Room for improvement:
 To do:
 - Meta data
 - Logn link
-
+- Images
+- Text content
 
 ## Contact
 Created by [@PatrykSZ](https://www.patryk.site) - feel free to contact me!
