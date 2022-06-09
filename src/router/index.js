@@ -12,12 +12,12 @@ const routes = [
   {
     path: '/wydawnictwo',
     name: 'Wydawnictwo',
-    component: () => import(/* webpackChunkName: Wydawnictwo */ '../views/Wydawnictwo.vue')
+    component: () => import( '../views/Wydawnictwo.vue')
   },
   {
     path: '/blog/:slug',
     name: 'Blog',
-    component: () => import(/* webpackChunkName: Uslugi */ '../views/Blog.vue'),
+    component: () => import( '../views/Blog.vue'),
     beforeEnter: (to) => {
       const slug = to.params.slug
       const blogs = store.state.dataItems.blogs
@@ -35,7 +35,7 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: () => import(/* webpackChunkName: NotFound */ '../views/NotFound.vue')
+    component: () => import( '../views/NotFound.vue')
   },
 ]
 
