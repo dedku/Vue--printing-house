@@ -3,15 +3,10 @@
 > Live demo [_here_](https://test-druk-5abd4.web.app/). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
-* [Screenshots](#screenshots)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 * [Contact](#contact)
 <!-- * [License](#license) -->
-
-
-## Screenshots
-<!-- *![Example screenshot](./img/screenshot.png)-->
 
 
 ## Project Status
@@ -21,14 +16,13 @@ Project is: _in progress_
 ## Room for Improvement
 
 Room for improvement:
-- Dashboard css
-- Sidebar icons
+- Padding
+- Products modal popup
+- Media-query
 
 To do:
-- Backend/Strapi
-- Authentication
-- Pop-up
-- Media-query
+- Meta data
+- Logn link
 
 
 ## Contact
