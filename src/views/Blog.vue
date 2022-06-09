@@ -12,7 +12,7 @@
             blog.author
         }}</a>
     </div>
-    <div class="mx-24 mt-12 text-justify tracking-wide " v-html="blog.content" />
+    <div class="mx-6 mt-12 text-justify tracking-wide lg:mx-24 md:mx-12" v-html="blog.content" />
   </div>
   <Products />
   <Footer />
