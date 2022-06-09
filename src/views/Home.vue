@@ -1,22 +1,19 @@
 <template>
-  <img v-if="loading" src="https://i.imgur.com/JfPpwOA.gif">
-  <div v-else>
-    <Navbar />
-    <Header :header="header[0]" />
-    <Stats :stats="stats" />
-    <Customers :customers="customers[0]" />
-    <Products />
-    <About :whywe="whywe[0]" />
-    <Books :books="books" />
-    <Assets :authPart="authPartner[0]" />
-    <Blog :blogs="blogs" />
-    <Contact />
-    <Footer />
-  </div>
+  <Navbar />
+  <Header :header="header[0]" />
+  <Stats :stats="stats" />
+  <Customers :customers="customers[0]" />
+  <Products />
+  <About :whywe="whywe[0]" />
+  <Books :books="books" />
+  <Assets :authPart="authPartner[0]" />
+  <Blog :blogs="blogs" />
+  <Contact />
+  <Footer />
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState } from 'vuex';
 import { defineAsyncComponent } from 'vue'
 
 import Navbar from '../components/Navbar.vue'
@@ -55,11 +52,6 @@ export default {
     Customers,
     Contact,
   },
-  data() {
-    return {
-      loading: false,
-    }
-  },
   computed: {
     ...mapState({
       header: state => state.dataItems.header,
@@ -71,17 +63,17 @@ export default {
       books: state => state.dataItems.books,
     })
   },
-  methods: {
-    ...mapActions({
-      fetchData: 'dataItems/fetchData',
-    })
-  },
-  created() {
-    this.loading = true
-    this.fetchData().then(() => this.loading = false)
-  },
 }
 </script>
 
 <style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

@@ -11,14 +11,14 @@
         <div class="lg:max-w-xl lg:mb-8 items-center justify-center">
           <div>
             <img src="../assets/poligrafia-logo-main.svg" alt="poligrafia-łódź-small"
-              class="h-32 inline-block px-3 py-px mb-1 sm:h-16">
+              class="h-32 inline-block px-3 py-px mb-1 sm:h-16 2xl:h-32">
           </div>
           <h2
-            class="font-sans text-4xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-3xl sm:leading-none">
+            class="font-sans text-4xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-3xl sm:leading-none 2xl:text-6xl">
             {{ header.title }}<br class="hidden md:block" />
             <span class="inline-block text-deep-purple-accent-400">{{ header.titlePurple }}</span>
           </h2>
-          <p class="mt-10 text-base text-gray-700 md:text-lg ">
+          <p class="mt-10 text-base text-gray-700 md:text-lg 2xl:mt-24">
             {{ header.content }}
           </p>
         </div>
@@ -35,7 +35,7 @@
             class="inline-flex items-center font-semibold  h-12 px-6 mr-6  text-gray-800 rounded transition-colors duration-200 shadow-inner ring-green-500 ring-2 flex-colring-2 hover:text-gray-200 hover:shadow-md hover:bg-green-500">
             Napisz do nas </router-link>
         </div>
-        <hr class="mb-8 border-purple-300 mt-12 " />
+        <hr class="mb-8 border-purple-300 mt-12 2xl:mt-24" />
         <div class="flex">
           <div class="flex flex-col">
             <div class="text-md font-semibold flex items-center ">

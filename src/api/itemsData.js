@@ -15,6 +15,6 @@ const _allData = [
 ]
 export default {
   getData (cb) {
-    setTimeout(() => cb(_allData), 200)
+    setTimeout(() => cb(_allData), 800)
   },
 }

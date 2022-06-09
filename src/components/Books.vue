@@ -17,25 +17,28 @@
       </p>
     </div>
     <div class="grid gap-8 mb-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
-      <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm"
-        v-for="book in books.slice(0, 3)" :key="book.id">
-        <img :src="getImgUrl(book.image)" class="object-cover w-full h-64" :alt="book.title" />
-        <div class="p-5 border border-t-0">
-          <p class="mb-3 text-xs text-right font-semibold tracking-wide uppercase">
-            <span class="text-gray-600">{{ book.author }}</span>
-          </p>
-          <div class="text-left">
-            <router-link :to="bookId(book.id)" :title="book.title"
-              class="inline-blck text-left mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
-              v-html="dotAfterText(book.title, 31)" />
-            <p class="mb-2 text-gray-700" v-html="dotAfterText(book.content, 140)" />
-            <router-link :to="bookId(book.id)" aria-label=""
-              class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
-              Sprawdź</router-link>
+      <TransitionGroup name="list">
+        <div class="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm"
+          v-for="book in books.slice(0, 3)" :key="book.id">
+          <img :src="getImgUrl(book.image)" class="object-cover w-full h-64" :alt="book.title" />
+          <div class="p-5 border border-t-0">
+            <p class="mb-3 text-xs text-right font-semibold tracking-wide uppercase">
+              <span class="text-gray-600">{{ book.author }}</span>
+            </p>
+            <div class="text-left">
+              <router-link :to="bookId(book.id)" :title="book.title"
+                class="inline-blck text-left mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
+                v-html="dotAfterText(book.title, 31)" />
+              <p class="mb-2 text-gray-700" v-html="dotAfterText(book.content, 140)" />
+              <router-link :to="bookId(book.id)" aria-label=""
+                class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+                Sprawdź</router-link>
+            </div>
           </div>
         </div>
-      </div>
+      </TransitionGroup>
     </div>
+
     <div class="text-center">
       <router-link to="/wydawnictwo" aria-label=""
         class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
@@ -73,3 +76,16 @@ export default {
   },
 }
 </script>
+
+<style>
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+</style>
